@@ -1,8 +1,0 @@
-//此笔记基于git文档翻译，总结常用git相关指令。文档地址：https://git-scm.com/docs
-一、Setup and Config（设置与配置）
-
-二、Getting and Creatting Project(获取与创建项目)
-    如何创建版本库？
-    1.打开终端或者直接在需要创建版本库的位置创建版本库文件夹。
-        执行Linux命令mkdir XXX创建仓库（文件夹）,cd XXX进入创建的仓库。
-    2.通过git init XXX初始化仓库。
