@@ -60,15 +60,17 @@
 
   1. **git 命令操作远程仓库前必须要必须先添加 ssh 秘钥，否则会报错**。生成和添加秘钥请参考 GitHub 官网[生成一个秘钥](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)文档。
   2. 打开终端（执行 Linux 命令 mkdir XXX 创建目录,cd XXX 进入创建的目录）或者直接在合适位置创建目录并进入。
-  3. 添加远程仓库进行关联。
-     > git remote add origin XXX
-  4. 初始化仓库（会创建.git 仓库文件）。
+  3. 初始化仓库（会创建.git 仓库文件）。
      > git init XXX
-  5. 添加所有文件到暂存区/索引区。
+  4. 添加所有文件到暂存区/索引区。
      > git add .
-  6. 提交本地修改。
-     > 通过 git commit -m "将原始状态记录为历史上的首次提交" 。
-  7. git push -u origin main
+  5. 提交本地修改。
+     > 通过 git commit -m "将原始状态记录为历史上的首次提交"
+  6. 强制修改本地分支名为 main，GitHub 官方推荐的分支名。
+     > git branch -M main
+  7. 添加远程仓库进行关联。
+     > git remote add origin git@github.com:AustinIt/learngit.git
+  8. git push -u origin main
      > 推送代码到 GitHub 上的仓库 。
 
 ### 2.2 git-clone-（将存储库克隆到新目录中）
