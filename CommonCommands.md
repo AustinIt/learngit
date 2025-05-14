@@ -3,10 +3,9 @@
 > **日期**：2025-04-26  
 > **学习目标**：此笔记基于[廖雪峰的 Git 教程](https://liaoxuefeng.com/books/git/introduction/index.html)与[Git 官方文档](https://git-scm.com/docs)翻译，学习总结工作中常用的 git 相关指令，学习笔记存放在 GitHub 的[learngit](https://github.com/AustinIt/learngit)仓库中。  
 > **注意**：
->
-> > 1.git 命令操作远程仓库前必须要必须先添加 ssh 秘钥，否则会报错。生成和添加秘钥请参考 GitHub 官网[生成一个秘钥](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)文档。  
-> > 2.**工作区（仓库中实际的文件存放的位置）和暂存区/索引区（新建、修改、删除、文件后暂时存放的位置，通过 git add \<file>后就存入进来了）概念要区分清楚，通过 git commit -m <msg>把暂存区的文件一次性提交到 HEAD 指向的本地分支。** 如果实在不理解，可以查看[廖雪峰的解释](https://liaoxuefeng.com/books/git/time-travel/working-stage/index.html)帮助理解。  
-> > 3.git 命令该要的语法中[]代表可选参数，\<xxx>用户必须要自己输入信息，\<name>=\<value> 就是配置项=配置值。
+
+- **工作区（仓库中实际的文件存放的位置）和暂存区/索引区（新建、修改、删除、文件后暂时存放的位置，通过 git add \<file>后就存入进来了）概念要区分清楚，通过 git commit -m <msg>把暂存区的文件一次性提交到 HEAD 指向的本地分支。** 如果实在不理解，可以查看[廖雪峰的解释](https://liaoxuefeng.com/books/git/time-travel/working-stage/index.html)帮助理解。
+- git 命令该要的语法中[]代表可选参数，\<xxx>用户必须要自己输入信息，\<name>=\<value> 就是配置项=配置值。
 
 ---
 
@@ -57,9 +56,20 @@
 
 - #### Examples（示例）：
 
-  1. 打开终端（执行 Linux 命令 mkdir XXX 创建目录,cd XXX 进入创建的目录）或者直接在合适位置创建目录并进入。
-  2. git init XXX 初始化仓库（会创建.git 仓库文件）。
-  3. git add .添加所有文件到暂存区/索引区。 4. 通过 git commit -m "将原始状态记录为历史上的首次提交" 。
+  初始化的操作以 GitHub 为例，其他仓库基本都是一样的。
+
+  1. **git 命令操作远程仓库前必须要必须先添加 ssh 秘钥，否则会报错**。生成和添加秘钥请参考 GitHub 官网[生成一个秘钥](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)文档。
+  2. 打开终端（执行 Linux 命令 mkdir XXX 创建目录,cd XXX 进入创建的目录）或者直接在合适位置创建目录并进入。
+  3. 添加远程仓库进行关联。
+     > git remote add origin XXX
+  4. 初始化仓库（会创建.git 仓库文件）。
+     > git init XXX
+  5. 添加所有文件到暂存区/索引区。
+     > git add .
+  6. 提交本地修改。
+     > 通过 git commit -m "将原始状态记录为历史上的首次提交" 。
+  7. git push -u origin main
+     > 推送代码到 GitHub 上的仓库 。
 
 ### 2.2 git-clone-（将存储库克隆到新目录中）
 
